@@ -1,0 +1,10 @@
+{
+    "emulators" : [
+        {
+            "system_id" : 1,
+            "emulator_name" : "dolphin",
+            "emulator_file" : "File goes here",
+            "emulator_img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT3T8npnCRx5yQAVxYWCpG4sOzakaFhFGELA&s"
+        }
+    ]
+}

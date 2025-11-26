@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "email": "test@email.com",
+      "password": "test",
+      "is_verified": true
+    }
+  ]
+}
