@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS emulators;
 CREATE TABLE users(
     id INTEGER PRIMARY KEY,
     email TEXT UNIQUE NOT NULL,
-    password_hash TEXT NOT NULL,
+    password TEXT NOT NULL,
     is_verified BOOLEAN DEFAULT 0
 );
 
