@@ -1,5 +1,4 @@
-from db.client import get_connection
-
+from db.client import fetch_all, fetch_one, execute_query
 
 def create_game(franchise_id, system_id, game_name, game_file, game_img=None, description=None):
     SQL = """
@@ -7,17 +6,8 @@ def create_game(franchise_id, system_id, game_name, game_file, game_img=None, de
         (franchise_id, system_id, game_name, game_file, game_img, description)
         VALUES (?, ?, ?, ?, ?, ?)
     """
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute(SQL, [franchise_id, system_id, game_name, game_file, game_img, description])
-    conn.commit()
-    
-    game_id = cursor.lastrowid
-    cursor.execute("SELECT * FROM games WHERE id = ?", [game_id])
-    game = cursor.fetchone()
-    conn.close()
-    
-    return dict(game)
+    game_id = execute_query(SQL, [franchise_id, system_id, game_name, game_file, game_img, description])
+    return get_game(game_id)
 
 def get_all_games():
     SQL = """
@@ -29,14 +19,7 @@ def get_all_games():
         LEFT JOIN franchises f ON g.franchise_id = f.id
         LEFT JOIN systems s ON g.system_id = s.id
     """
-    
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute(SQL)
-    games = cursor.fetchall()
-    conn.close() 
-    
-    return [dict(game) for game in games]
+    return fetch_all(SQL)
     
 def get_game(id):
     SQL = """
@@ -49,14 +32,7 @@ def get_game(id):
         LEFT JOIN systems s ON g.system_id = s.id
         WHERE g.id = ?
     """
-    
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute(SQL, [id])
-    game = cursor.fetchone() 
-    conn.close() 
-    
-    return dict(game) if game else None
+    return fetch_one(SQL, [id])
 
 def get_games_by_franchise(franchise_id):
     SQL = """
@@ -69,14 +45,7 @@ def get_games_by_franchise(franchise_id):
         LEFT JOIN systems s ON g.system_id = s.id
         WHERE g.franchise_id = ?
     """
-
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute(SQL, [franchise_id])
-    games = cursor.fetchall() 
-    conn.close() 
-    
-    return [dict(game) for game in games]
+    return fetch_all(SQL, [franchise_id])
 
 def update_game(id, franchise_id, system_id, game_name, game_file, game_img, description):
     SQL = """
@@ -90,27 +59,13 @@ def update_game(id, franchise_id, system_id, game_name, game_file, game_img, des
         description = ?
     WHERE id = ?
     """
-
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute(SQL, [franchise_id, system_id, game_name, game_file, game_img, description, id])
-    conn.commit()
-    
-    cursor.execute("SELECT * FROM games WHERE id = ?", [id])
-    game = cursor.fetchone()
-    conn.close()
-    
-    return dict(game) if game else None
+    execute_query(SQL, [franchise_id, system_id, game_name, game_file, game_img, description, id])
+    return get_game(id)
 
 def delete_game(game_id):
     SQL = """
         DELETE FROM games
         WHERE id = ?
     """
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute(SQL, [game_id])
-    conn.commit()
-    conn.close()
-    
+    execute_query(SQL, [game_id])
     return {"message": "Game deleted"}
