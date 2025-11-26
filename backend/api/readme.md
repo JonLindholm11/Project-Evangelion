@@ -261,6 +261,153 @@ Delete a user by ID.
 
 ---
 
+### Systems Management
+
+#### `POST /api/systems`
+Create a new gaming system.
+
+**Authentication:** Required
+
+**Request Body:**
+```json
+{
+  "system_name": "Nintendo 64",
+  "system_img": "https://example.com/images/n64.png"
+}
+```
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "system_name": "Nintendo 64",
+  "system_img": "https://example.com/images/n64.png"
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `GET /api/systems`
+Get a list of all gaming systems.
+
+**Authentication:** Required
+
+**Success Response (200):**
+```json
+{
+  "systems": [
+    {
+      "id": 1,
+      "system_name": "Nintendo 64",
+      "system_img": "https://example.com/images/n64.png"
+    },
+    {
+      "id": 2,
+      "system_name": "PlayStation 1",
+      "system_img": "https://example.com/images/ps1.png"
+    }
+  ]
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `GET /api/systems/{id}`
+Get a specific gaming system by ID.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - System ID
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "system_name": "Nintendo 64",
+  "system_img": "https://example.com/images/n64.png"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - System doesn't exist
+```json
+{
+  "detail": "System not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `PUT /api/systems/{id}`
+Update a gaming system's information.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - System ID
+
+**Request Body:**
+```json
+{
+  "system_name": "Nintendo 64 Updated",
+  "system_img": "https://example.com/images/n64-new.png"
+}
+```
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "system_name": "Nintendo 64 Updated",
+  "system_img": "https://example.com/images/n64-new.png"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - System doesn't exist
+```json
+{
+  "detail": "System not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `DELETE /api/systems/{id}`
+Delete a gaming system by ID.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - System ID
+
+**Success Response (200):**
+```json
+{
+  "message": "System deleted"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - System doesn't exist
+```json
+{
+  "detail": "System not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
 ## Error Handling
 
 All endpoints return appropriate HTTP status codes:
@@ -321,7 +468,7 @@ const users = await usersResponse.json();
 
 ### Installation
 ```bash
-pip install -r requirements.txt
+pip install fastapi uvicorn bcrypt pyjwt --break-system-packages
 ```
 
 ### Running the Server
