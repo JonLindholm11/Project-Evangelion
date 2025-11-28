@@ -408,6 +408,395 @@ Delete a gaming system by ID.
 
 ---
 
+### Games Management
+
+#### `POST /api/games`
+Create a new game entry.
+
+**Authentication:** Required
+
+**Request Body:**
+```json
+{
+  "franchise_id": 1,
+  "system_id": 1,
+  "game_name": "Super Mario 64",
+  "game_file": "https://example.com/files/super-mario-64.z64",
+  "game_img": "https://example.com/images/mario64.png",
+  "description": "A classic 3D platformer for Nintendo 64"
+}
+```
+
+**Note:** `game_img` and `description` are optional fields.
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "franchise_id": 1,
+  "system_id": 1,
+  "game_name": "Super Mario 64",
+  "game_file": "https://example.com/files/super-mario-64.z64",
+  "game_img": "https://example.com/images/mario64.png",
+  "description": "A classic 3D platformer for Nintendo 64",
+  "franchise_name": "Mario",
+  "system_name": "Nintendo 64"
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `GET /api/games`
+Get a list of all games with franchise and system information.
+
+**Authentication:** Required
+
+**Success Response (200):**
+```json
+{
+  "games": [
+    {
+      "id": 1,
+      "franchise_id": 1,
+      "system_id": 1,
+      "game_name": "Super Mario 64",
+      "game_file": "https://example.com/files/super-mario-64.z64",
+      "game_img": "https://example.com/images/mario64.png",
+      "description": "A classic 3D platformer for Nintendo 64",
+      "franchise_name": "Mario",
+      "system_name": "Nintendo 64"
+    },
+    {
+      "id": 2,
+      "franchise_id": 2,
+      "system_id": 1,
+      "game_name": "The Legend of Zelda: Ocarina of Time",
+      "game_file": "https://example.com/files/zelda-oot.z64",
+      "game_img": "https://example.com/images/zelda-oot.png",
+      "description": "Epic adventure game",
+      "franchise_name": "The Legend of Zelda",
+      "system_name": "Nintendo 64"
+    }
+  ]
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `GET /api/games/{id}`
+Get a specific game by ID with franchise and system information.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - Game ID
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "franchise_id": 1,
+  "system_id": 1,
+  "game_name": "Super Mario 64",
+  "game_file": "https://example.com/files/super-mario-64.z64",
+  "game_img": "https://example.com/images/mario64.png",
+  "description": "A classic 3D platformer for Nintendo 64",
+  "franchise_name": "Mario",
+  "system_name": "Nintendo 64"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - Game doesn't exist
+```json
+{
+  "detail": "Game not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `GET /api/games/franchise/{franchise_id}`
+Get all games belonging to a specific franchise.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `franchise_id` (integer) - Franchise ID
+
+**Success Response (200):**
+```json
+{
+  "games": [
+    {
+      "id": 1,
+      "franchise_id": 1,
+      "system_id": 1,
+      "game_name": "Super Mario 64",
+      "game_file": "https://example.com/files/super-mario-64.z64",
+      "game_img": "https://example.com/images/mario64.png",
+      "description": "A classic 3D platformer for Nintendo 64",
+      "franchise_name": "Mario",
+      "system_name": "Nintendo 64"
+    },
+    {
+      "id": 5,
+      "franchise_id": 1,
+      "system_id": 3,
+      "game_name": "Super Mario Sunshine",
+      "game_file": "https://example.com/files/mario-sunshine.iso",
+      "game_img": "https://example.com/images/sunshine.png",
+      "description": "Mario adventure on GameCube",
+      "franchise_name": "Mario",
+      "system_name": "GameCube"
+    }
+  ]
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `PUT /api/games/{id}`
+Update a game's information.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - Game ID
+
+**Request Body:**
+```json
+{
+  "franchise_id": 1,
+  "system_id": 1,
+  "game_name": "Super Mario 64 Updated",
+  "game_file": "https://example.com/files/super-mario-64-v2.z64",
+  "game_img": "https://example.com/images/mario64-new.png",
+  "description": "Updated classic 3D platformer"
+}
+```
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "franchise_id": 1,
+  "system_id": 1,
+  "game_name": "Super Mario 64 Updated",
+  "game_file": "https://example.com/files/super-mario-64-v2.z64",
+  "game_img": "https://example.com/images/mario64-new.png",
+  "description": "Updated classic 3D platformer",
+  "franchise_name": "Mario",
+  "system_name": "Nintendo 64"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - Game doesn't exist
+```json
+{
+  "detail": "Game not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `DELETE /api/games/{id}`
+Delete a game by ID.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - Game ID
+
+**Success Response (200):**
+```json
+{
+  "message": "Game deleted"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - Game doesn't exist
+```json
+{
+  "detail": "Game not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+### Franchises Management
+
+#### `POST /api/franchises`
+Create a new game franchise.
+
+**Authentication:** Required
+
+**Request Body:**
+```json
+{
+  "system_id": 1,
+  "franchise_name": "Mario",
+  "franchise_img": "https://example.com/images/mario-franchise.png"
+}
+```
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "system_id": 1,
+  "franchise_name": "Mario",
+  "franchise_img": "https://example.com/images/mario-franchise.png",
+  "system_name": "Nintendo 64"
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `GET /api/franchises`
+Get a list of all franchises with system information.
+
+**Authentication:** Required
+
+**Success Response (200):**
+```json
+{
+  "franchises": [
+    {
+      "id": 1,
+      "system_id": 1,
+      "franchise_name": "Mario",
+      "franchise_img": "https://example.com/images/mario-franchise.png",
+      "system_name": "Nintendo 64"
+    },
+    {
+      "id": 2,
+      "system_id": 1,
+      "franchise_name": "The Legend of Zelda",
+      "franchise_img": "https://example.com/images/zelda-franchise.png",
+      "system_name": "Nintendo 64"
+    }
+  ]
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `GET /api/franchises/{id}`
+Get a specific franchise by ID with system information.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - Franchise ID
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "system_id": 1,
+  "franchise_name": "Mario",
+  "franchise_img": "https://example.com/images/mario-franchise.png",
+  "system_name": "Nintendo 64"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - Franchise doesn't exist
+```json
+{
+  "detail": "Franchise not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `PUT /api/franchises/{id}`
+Update a franchise's information.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - Franchise ID
+
+**Request Body:**
+```json
+{
+  "system_id": 1,
+  "franchise_name": "Super Mario",
+  "franchise_img": "https://example.com/images/mario-franchise-updated.png"
+}
+```
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "system_id": 1,
+  "franchise_name": "Super Mario",
+  "franchise_img": "https://example.com/images/mario-franchise-updated.png",
+  "system_name": "Nintendo 64"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - Franchise doesn't exist
+```json
+{
+  "detail": "Franchise not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `DELETE /api/franchises/{id}`
+Delete a franchise by ID.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - Franchise ID
+
+**Success Response (200):**
+```json
+{
+  "message": "franchise deleted"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - Franchise doesn't exist
+```json
+{
+  "detail": "Franchise not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
 ## Error Handling
 
 All endpoints return appropriate HTTP status codes:
