@@ -797,6 +797,172 @@ Delete a franchise by ID.
 
 ---
 
+### Emulators Management
+
+#### `POST /api/emulators`
+Create a new emulator entry.
+
+**Authentication:** Required
+
+**Request Body:**
+```json
+{
+  "system_id": 1,
+  "emulator_name": "Project64",
+  "emulator_file": "https://example.com/files/project64.zip",
+  "emulator_img": "https://example.com/images/project64.png"
+}
+```
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "system_id": 1,
+  "emulator_name": "Project64",
+  "emulator_file": "https://example.com/files/project64.zip",
+  "emulator_img": "https://example.com/images/project64.png",
+  "system_name": "Nintendo 64"
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `GET /api/emulators`
+Get a list of all emulators with system information.
+
+**Authentication:** Required
+
+**Success Response (200):**
+```json
+{
+  "emulators": [
+    {
+      "id": 1,
+      "system_id": 1,
+      "emulator_name": "Project64",
+      "emulator_file": "https://example.com/files/project64.zip",
+      "emulator_img": "https://example.com/images/project64.png",
+      "system_name": "Nintendo 64"
+    },
+    {
+      "id": 2,
+      "system_id": 2,
+      "emulator_name": "ePSXe",
+      "emulator_file": "https://example.com/files/epsxe.zip",
+      "emulator_img": "https://example.com/images/epsxe.png",
+      "system_name": "PlayStation 1"
+    }
+  ]
+}
+```
+
+**Error Responses:**
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `GET /api/emulators/{id}`
+Get a specific emulator by ID with system information.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - Emulator ID
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "system_id": 1,
+  "emulator_name": "Project64",
+  "emulator_file": "https://example.com/files/project64.zip",
+  "emulator_img": "https://example.com/images/project64.png",
+  "system_name": "Nintendo 64"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - Emulator doesn't exist
+```json
+{
+  "detail": "Emulator not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `PUT /api/emulators/{id}`
+Update an emulator's information.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - Emulator ID
+
+**Request Body:**
+```json
+{
+  "system_id": 1,
+  "emulator_name": "Project64 Updated",
+  "emulator_file": "https://example.com/files/project64-v2.zip",
+  "emulator_img": "https://example.com/images/project64-new.png"
+}
+```
+
+**Success Response (200):**
+```json
+{
+  "id": 1,
+  "system_id": 1,
+  "emulator_name": "Project64 Updated",
+  "emulator_file": "https://example.com/files/project64-v2.zip",
+  "emulator_img": "https://example.com/images/project64-new.png",
+  "system_name": "Nintendo 64"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - Emulator doesn't exist
+```json
+{
+  "detail": "Emulator not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
+#### `DELETE /api/emulators/{id}`
+Delete an emulator by ID.
+
+**Authentication:** Required
+
+**URL Parameters:**
+- `id` (integer) - Emulator ID
+
+**Success Response (200):**
+```json
+{
+  "message": "Emulator deleted"
+}
+```
+
+**Error Responses:**
+- `404 Not Found` - Emulator doesn't exist
+```json
+{
+  "detail": "Emulator not found"
+}
+```
+- `401 Unauthorized` - Invalid or missing token
+
+---
+
 ## Error Handling
 
 All endpoints return appropriate HTTP status codes:
