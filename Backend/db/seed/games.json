@@ -1,0 +1,11 @@
+{
+    "games" : [
+        {
+            "franchise_id" : 1,
+            "system_id" : 1,
+            "game_name" : "Mario 64",
+            "game_img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiBj1k8TKD2TZ5HagKV94Ge-DrjEhooGIduw&s",
+            "description" : "The best speed run game of all time"
+        }
+    ]
+}
