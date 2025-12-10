@@ -1,6 +1,6 @@
 import bcrypt
 from db.client import fetch_all, fetch_one, execute_query
-from db.jwt_utils import create_token, verify_token
+from db.utils.jwt_utils import create_token, verify_token
 
 def create_user(email, password, is_verified):
     hashed_password = bcrypt.hashpw(

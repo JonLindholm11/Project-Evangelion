@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, status, Depends, Header
 from pydantic import BaseModel, EmailStr
 from typing import Optional
-import user_functions
+from db.query import users as user_functions
 
 router = APIRouter(prefix="/api", tags=["users"])
 

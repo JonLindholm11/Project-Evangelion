@@ -1,24 +1,30 @@
 from fastapi import APIRouter, HTTPException, status, Depends, Header
 from pydantic import BaseModel
 from typing import Optional
-import game_functions 
-import user_functions 
+from db.query import games as game_functions
+from db.query import users as user_functions
 
 router = APIRouter(prefix="/api", tags=["games"])
 
 # Pydantic models for request validation
 class CreateGameRequest(BaseModel):
-    franchise_id: int
+    franchise_id: Optional[int] = None
     system_id: int
+    publisher: str
     game_name: str
     game_img: Optional[str] = None
+    genre: Optional[str] = None
+    release_year: Optional[int] = None
     description: Optional[str] = None
 
 class UpdateGameRequest(BaseModel):
-    franchise_id: int
+    franchise_id: Optional[int] = None
     system_id: int
+    publisher: str
     game_name: str
     game_img: Optional[str] = None
+    genre: Optional[str] = None
+    release_year: Optional[int] = None
     description: Optional[str] = None
 
 # Dependency to get current user from token
@@ -61,8 +67,11 @@ async def create_game(
     new_game = game_functions.create_game(
         game_data.franchise_id,
         game_data.system_id,
+        game_data.publisher,
         game_data.game_name,
         game_data.game_img,
+        game_data.genre,
+        game_data.release_year,
         game_data.description
     )
     
@@ -96,6 +105,15 @@ async def get_games_by_franchise(
     games = game_functions.get_games_by_franchise(franchise_id)
     return {"games": games}
 
+# GET /api/games/genre/{genre} - Get games by genre (requires authentication)
+@router.get("/games/genre/{genre}")
+async def get_games_by_genre(
+    genre: str,
+    current_user: dict = Depends(get_current_user)
+):
+    games = game_functions.get_games_by_genre(genre)
+    return {"games": games}
+
 # PUT /api/games/{id} - Update game (requires authentication)
 @router.put("/games/{id}")
 async def update_game(
@@ -116,8 +134,11 @@ async def update_game(
         id,
         game_data.franchise_id,
         game_data.system_id,
+        game_data.publisher,
         game_data.game_name,
         game_data.game_img,
+        game_data.genre,
+        game_data.release_year,
         game_data.description
     )
     

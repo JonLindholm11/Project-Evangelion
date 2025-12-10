@@ -1,9 +1,12 @@
-{
-  "franchises": [
-    {
-      "system_id": 1,
-      "franchise_name": "mario",
-      "franchise_img": "https://static.wikia.nocookie.net/universalstudios/images/0/00/Profile_-_Mario.jpg/revision/latest?cb=20240902063534"
-    }
-  ]
-}
+[
+  { "id": 1, "franchise_name": "Standalone", "franchise_img": null },
+  { "id": 2, "franchise_name": "Mario", "franchise_img": null },
+  { "id": 3, "franchise_name": "Fire Emblem", "franchise_img": null },
+  { "id": 4, "franchise_name": "Pokemon", "franchise_img": null },
+  { "id": 5, "franchise_name": "The Legend of Zelda", "franchise_img": null },
+  { "id": 6, "franchise_name": "Souls", "franchise_img": null },
+  { "id": 7, "franchise_name": "Final Fantasy", "franchise_img": null },
+  { "id": 8, "franchise_name": "Metroid", "franchise_img": null },
+  { "id": 9, "franchise_name": "Halo", "franchise_img": null },
+  { "id": 10, "franchise_name": "XCOM", "franchise_img": null }
+]
