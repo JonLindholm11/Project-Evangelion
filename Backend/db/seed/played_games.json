@@ -1,0 +1,45 @@
+[
+  {
+    "user_id": 1,
+    "game_id": 2,
+    "rating": 5,
+    "notes": "Incredibly challenging but rewarding"
+  },
+  {
+    "user_id": 1,
+    "game_id": 3,
+    "rating": 5,
+    "notes": "Loved the story and characters"
+  },
+  { "user_id": 1, "game_id": 8, "rating": 4, "notes": "Tough but fair combat" },
+  {
+    "user_id": 1,
+    "game_id": 10,
+    "rating": 5,
+    "notes": "Open world perfection"
+  },
+  {
+    "user_id": 1,
+    "game_id": 14,
+    "rating": 5,
+    "notes": "Best roguelike I've played"
+  },
+  {
+    "user_id": 1,
+    "game_id": 15,
+    "rating": 4,
+    "notes": "Precision platforming at its best"
+  },
+  {
+    "user_id": 1,
+    "game_id": 17,
+    "rating": 4,
+    "notes": "Perfect information tactics"
+  },
+  {
+    "user_id": 1,
+    "game_id": 21,
+    "rating": 4,
+    "notes": "Stressful but fun strategy"
+  }
+]

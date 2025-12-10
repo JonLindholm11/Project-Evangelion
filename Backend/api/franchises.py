@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException, status, Depends, Header
 from pydantic import BaseModel
 from typing import Optional
-import franchise_functions
-import user_functions
+from db.query import franchises as franchise_functions
+from db.query import users as user_functions
 
 router = APIRouter(prefix="/api", tags=["franchises"])
 

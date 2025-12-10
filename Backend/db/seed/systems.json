@@ -1,8 +1,18 @@
-{
-  "systems": [
-    {
-      "system_name": "nintendo 64",
-      "system_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Nintendo-64-Console-FL.jpg/2560px-Nintendo-64-Console-FL.jpg"
-    }
-  ]
-}
+[
+  { "id": 1, "system_name": "PC", "system_img": null },
+  { "id": 2, "system_name": "Nintendo 64", "system_img": null },
+  { "id": 3, "system_name": "SNES", "system_img": null },
+  { "id": 4, "system_name": "Game Boy Advance", "system_img": null },
+  { "id": 5, "system_name": "Nintendo DS", "system_img": null },
+  { "id": 6, "system_name": "Nintendo 3DS", "system_img": null },
+  { "id": 7, "system_name": "Nintendo Switch", "system_img": null },
+  { "id": 8, "system_name": "PlayStation", "system_img": null },
+  { "id": 9, "system_name": "PlayStation 2", "system_img": null },
+  { "id": 10, "system_name": "PlayStation 3", "system_img": null },
+  { "id": 11, "system_name": "PlayStation 4", "system_img": null },
+  { "id": 12, "system_name": "PlayStation 5", "system_img": null },
+  { "id": 13, "system_name": "Xbox", "system_img": null },
+  { "id": 14, "system_name": "Xbox 360", "system_img": null },
+  { "id": 15, "system_name": "Xbox One", "system_img": null },
+  { "id": 16, "system_name": "Xbox Series X", "system_img": null }
+]

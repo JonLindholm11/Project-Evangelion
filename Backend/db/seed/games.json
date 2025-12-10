@@ -1,11 +1,332 @@
-{
-    "games" : [
-        {
-            "franchise_id" : 1,
-            "system_id" : 1,
-            "game_name" : "Mario 64",
-            "game_img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiBj1k8TKD2TZ5HagKV94Ge-DrjEhooGIduw&s",
-            "description" : "The best speed run game of all time"
-        }
-    ]
-}
+[
+  {
+    "id": 1,
+    "franchise_id": 2,
+    "system_id": 2,
+    "publisher": "Nintendo",
+    "game_name": "Super Mario 64",
+    "game_img": null,
+    "genre": "Platformer",
+    "release_year": 1996,
+    "description": "Revolutionary 3D platformer that defined the genre"
+  },
+  {
+    "id": 2,
+    "franchise_id": 3,
+    "system_id": 3,
+    "publisher": "Nintendo",
+    "game_name": "Fire Emblem: Thracia 776",
+    "game_img": null,
+    "genre": "Strategy",
+    "release_year": 1999,
+    "description": "Notoriously difficult tactical RPG with permadeath"
+  },
+  {
+    "id": 3,
+    "franchise_id": 3,
+    "system_id": 7,
+    "publisher": "Nintendo",
+    "game_name": "Fire Emblem: Three Houses",
+    "game_img": null,
+    "genre": "Strategy",
+    "release_year": 2019,
+    "description": "Modern tactical RPG with school life simulation"
+  },
+  {
+    "id": 4,
+    "franchise_id": 4,
+    "system_id": 4,
+    "publisher": "Nintendo",
+    "game_name": "Pokemon Emerald",
+    "game_img": null,
+    "genre": "RPG",
+    "release_year": 2004,
+    "description": "Enhanced version of Ruby/Sapphire with Battle Frontier"
+  },
+  {
+    "id": 5,
+    "franchise_id": 4,
+    "system_id": 5,
+    "publisher": "Nintendo",
+    "game_name": "Pokemon HeartGold",
+    "game_img": null,
+    "genre": "RPG",
+    "release_year": 2009,
+    "description": "Beloved remake of Gold with walking Pokemon"
+  },
+  {
+    "id": 6,
+    "franchise_id": 5,
+    "system_id": 2,
+    "publisher": "Nintendo",
+    "game_name": "The Legend of Zelda: Ocarina of Time",
+    "game_img": null,
+    "genre": "Adventure",
+    "release_year": 1998,
+    "description": "Groundbreaking 3D adventure game"
+  },
+  {
+    "id": 7,
+    "franchise_id": 5,
+    "system_id": 7,
+    "publisher": "Nintendo",
+    "game_name": "The Legend of Zelda: Breath of the Wild",
+    "game_img": null,
+    "genre": "Adventure",
+    "release_year": 2017,
+    "description": "Open-world reimagining of Zelda formula"
+  },
+  {
+    "id": 8,
+    "franchise_id": 6,
+    "system_id": 11,
+    "publisher": "FromSoftware",
+    "game_name": "Dark Souls III",
+    "game_img": null,
+    "genre": "Action RPG",
+    "release_year": 2016,
+    "description": "Challenging action RPG with intricate world design"
+  },
+  {
+    "id": 9,
+    "franchise_id": 6,
+    "system_id": 11,
+    "publisher": "FromSoftware",
+    "game_name": "Bloodborne",
+    "game_img": null,
+    "genre": "Action RPG",
+    "release_year": 2015,
+    "description": "Gothic horror souls-like with aggressive combat"
+  },
+  {
+    "id": 10,
+    "franchise_id": 6,
+    "system_id": 1,
+    "publisher": "FromSoftware",
+    "game_name": "Elden Ring",
+    "game_img": null,
+    "genre": "Action RPG",
+    "release_year": 2022,
+    "description": "Open-world souls game co-created with George R.R. Martin"
+  },
+  {
+    "id": 11,
+    "franchise_id": 7,
+    "system_id": 8,
+    "publisher": "Square",
+    "game_name": "Final Fantasy VII",
+    "game_img": null,
+    "genre": "RPG",
+    "release_year": 1997,
+    "description": "Iconic JRPG that brought the series to 3D"
+  },
+  {
+    "id": 12,
+    "franchise_id": 7,
+    "system_id": 11,
+    "publisher": "Square Enix",
+    "game_name": "Final Fantasy VII Remake",
+    "game_img": null,
+    "genre": "Action RPG",
+    "release_year": 2020,
+    "description": "Modern reimagining with action combat"
+  },
+  {
+    "id": 13,
+    "franchise_id": 8,
+    "system_id": 3,
+    "publisher": "Nintendo",
+    "game_name": "Super Metroid",
+    "game_img": null,
+    "genre": "Action-Adventure",
+    "release_year": 1994,
+    "description": "Defining metroidvania with atmospheric exploration"
+  },
+  {
+    "id": 14,
+    "franchise_id": 1,
+    "system_id": 1,
+    "publisher": "Supergiant Games",
+    "game_name": "Hades",
+    "game_img": null,
+    "genre": "Roguelike",
+    "release_year": 2020,
+    "description": "Narrative-driven roguelike with incredible art and music"
+  },
+  {
+    "id": 15,
+    "franchise_id": 1,
+    "system_id": 1,
+    "publisher": "Maddy Makes Games",
+    "game_name": "Celeste",
+    "game_img": null,
+    "genre": "Platformer",
+    "release_year": 2018,
+    "description": "Precision platformer about climbing a mountain"
+  },
+  {
+    "id": 16,
+    "franchise_id": 1,
+    "system_id": 1,
+    "publisher": "Team Cherry",
+    "game_name": "Hollow Knight",
+    "game_img": null,
+    "genre": "Metroidvania",
+    "release_year": 2017,
+    "description": "Beautiful hand-drawn metroidvania with challenging combat"
+  },
+  {
+    "id": 17,
+    "franchise_id": 1,
+    "system_id": 1,
+    "publisher": "Subset Games",
+    "game_name": "Into the Breach",
+    "game_img": null,
+    "genre": "Strategy",
+    "release_year": 2018,
+    "description": "Minimalist turn-based tactics with perfect information"
+  },
+  {
+    "id": 18,
+    "franchise_id": 1,
+    "system_id": 1,
+    "publisher": "ConcernedApe",
+    "game_name": "Stardew Valley",
+    "game_img": null,
+    "genre": "Simulation",
+    "release_year": 2016,
+    "description": "Relaxing farming simulator with RPG elements"
+  },
+  {
+    "id": 19,
+    "franchise_id": 9,
+    "system_id": 13,
+    "publisher": "Microsoft",
+    "game_name": "Halo: Combat Evolved",
+    "game_img": null,
+    "genre": "FPS",
+    "release_year": 2001,
+    "description": "Revolutionary console FPS that defined Xbox"
+  },
+  {
+    "id": 20,
+    "franchise_id": 9,
+    "system_id": 14,
+    "publisher": "Microsoft",
+    "game_name": "Halo 3",
+    "game_img": null,
+    "genre": "FPS",
+    "release_year": 2007,
+    "description": "Peak of original Halo trilogy"
+  },
+  {
+    "id": 21,
+    "franchise_id": 10,
+    "system_id": 1,
+    "publisher": "2K Games",
+    "game_name": "XCOM 2",
+    "game_img": null,
+    "genre": "Strategy",
+    "release_year": 2016,
+    "description": "Challenging turn-based tactics with permadeath"
+  },
+  {
+    "id": 22,
+    "franchise_id": 1,
+    "system_id": 1,
+    "publisher": "Toby Fox",
+    "game_name": "Undertale",
+    "game_img": null,
+    "genre": "RPG",
+    "release_year": 2015,
+    "description": "Unique RPG where you can spare enemies"
+  },
+  {
+    "id": 23,
+    "franchise_id": 1,
+    "system_id": 1,
+    "publisher": "Re-Logic",
+    "game_name": "Terraria",
+    "game_img": null,
+    "genre": "Sandbox",
+    "release_year": 2011,
+    "description": "2D sandbox with exploration and boss battles"
+  },
+  {
+    "id": 24,
+    "franchise_id": 1,
+    "system_id": 1,
+    "publisher": "Psyonix",
+    "game_name": "Rocket League",
+    "game_img": null,
+    "genre": "Sports",
+    "release_year": 2015,
+    "description": "Soccer with rocket-powered cars"
+  },
+  {
+    "id": 25,
+    "franchise_id": 1,
+    "system_id": 11,
+    "publisher": "Sony",
+    "game_name": "The Last of Us",
+    "game_img": null,
+    "genre": "Action-Adventure",
+    "release_year": 2013,
+    "description": "Post-apocalyptic story-driven adventure"
+  },
+  {
+    "id": 26,
+    "franchise_id": 1,
+    "system_id": 11,
+    "publisher": "Sony",
+    "game_name": "God of War (2018)",
+    "game_img": null,
+    "genre": "Action-Adventure",
+    "release_year": 2018,
+    "description": "Norse mythology action-adventure with incredible combat"
+  },
+  {
+    "id": 27,
+    "franchise_id": 1,
+    "system_id": 7,
+    "publisher": "Nintendo",
+    "game_name": "Splatoon 2",
+    "game_img": null,
+    "genre": "Shooter",
+    "release_year": 2017,
+    "description": "Colorful team-based ink shooter"
+  },
+  {
+    "id": 28,
+    "franchise_id": 2,
+    "system_id": 7,
+    "publisher": "Nintendo",
+    "game_name": "Super Mario Odyssey",
+    "game_img": null,
+    "genre": "Platformer",
+    "release_year": 2017,
+    "description": "Innovative 3D Mario with Cappy mechanics"
+  },
+  {
+    "id": 29,
+    "franchise_id": 1,
+    "system_id": 1,
+    "publisher": "Eric Barone",
+    "game_name": "Stardew Valley",
+    "game_img": null,
+    "genre": "Simulation",
+    "release_year": 2016,
+    "description": "Charming indie farming sim"
+  },
+  {
+    "id": 30,
+    "franchise_id": 1,
+    "system_id": 1,
+    "publisher": "Lucas Pope",
+    "game_name": "Return of the Obra Dinn",
+    "game_img": null,
+    "genre": "Puzzle",
+    "release_year": 2018,
+    "description": "Unique detective game with 1-bit graphics"
+  }
+]
