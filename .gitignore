@@ -1,6 +1,40 @@
-# Database
-*.db
-game_storage.db
+# Environment variables (API keys!)
+.env
+.env.local
+.env.*.local
 
-#Env
-*.env
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+db/games.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test files (if you want)
+test_*.py
